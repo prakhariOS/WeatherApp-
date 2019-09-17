@@ -11,23 +11,54 @@ import XCTest
 
 class WeatherAppTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    private let client = DarkSkyAPIClient()
+    
+    //test case to convert a temprature to celcius
+    func testCalculateTempToCelcius() {
+        let value = 86.00
+        let concevertValue = value.calculateTempToCelcius(tempreature: value)
+        XCTAssertEqual(concevertValue, 30)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    //test case to convert a timestamp to days
+    func testDayOfWeek(){
+        let rawDate = Date(timeIntervalSince1970: 1567926000)
+        let day = rawDate.dayOfTheWeek()
+        XCTAssertEqual(day, "Sunday")
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    //test case for rounded the value
+    func testRounded() {
+        let value = 32.15
+        let roundedValue = value.rounded(toPlaces: 0)
+        XCTAssertEqual(roundedValue, 32)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    //test case to convert a value to percentage
+    func testPercent(){
+        let value = 0.76
+        let percent = value.percent()
+        XCTAssertEqual(percent, 76)
+    }
+    
+    // convert into integer
+    func testConvertInt(){
+        let value = 1.76
+        let int = value.int()
+        XCTAssertEqual(int, 1)
+    }
+    
+    //  test case for API
+    func testAPIMethod() {
+        guard URL(string: "\(DarkSkyAPIKey.baseURL)\(DarkSkyAPIKey.apiKey)/") != nil else {
+            fatalError("URL can't be empty")
+        }
+        let cordinate = Coordinate(latitude: "26.876500", longitude: "75.814804")
+        client.getCurrentWeather(at: cordinate) { currentWeather,arrDayForcastWeather, error in
+            //return data
+            if error != nil{
+                fatalError("error occor")
+            }
+            
         }
     }
 
