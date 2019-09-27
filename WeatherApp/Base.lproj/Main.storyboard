@@ -28,8 +28,8 @@
         <!--Splash LaunchVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SplashLaunchVC" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="Weather_App" customModuleProvider="target">
+                <viewController id="BYZ-38-t0r" customClass="SplashLaunchVC" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="WeatherApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -74,7 +74,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="o8j-Wv-b3C"/>
                     <connections>
-                        <segue destination="XbN-tI-ITg" kind="presentation" identifier="HomeWeather" id="jUL-10-ULH"/>
+                        <segue destination="XbN-tI-ITg" kind="presentation" identifier="HomeWeather" modalPresentationStyle="fullScreen" id="jUL-10-ULH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -84,15 +84,15 @@
         <!--Home WeatherVC-->
         <scene sceneID="bmj-Kd-xaI">
             <objects>
-                <viewController id="XbN-tI-ITg" customClass="HomeWeatherVC" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="p4w-zo-V2Q" customClass="GradientView" customModule="Weather_App" customModuleProvider="target">
+                <viewController id="XbN-tI-ITg" customClass="HomeWeatherVC" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p4w-zo-V2Q" customClass="GradientView" customModule="WeatherApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjz-rZ-CT7">
                                 <rect key="frame" x="0.0" y="64" width="414" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-bC-Pd0" customClass="ButtonView" customModule="Weather_App" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-bC-Pd0" customClass="ButtonView" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="12" y="12" width="182.5" height="40"/>
                                         <color key="backgroundColor" red="0.9999656081199646" green="0.62633621692657471" blue="0.066172711551189423" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -108,7 +108,7 @@
                                             <action selector="btnCurrentLocationTaped:" destination="XbN-tI-ITg" eventType="touchUpInside" id="uui-i1-2Vm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWe-Bs-Ac9" customClass="ButtonView" customModule="Weather_App" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWe-Bs-Ac9" customClass="ButtonView" customModule="WeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="219.5" y="12" width="182.5" height="40"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Current Weather">
